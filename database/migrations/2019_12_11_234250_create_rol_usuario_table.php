@@ -17,8 +17,11 @@ class CreateRolUsuarioTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('rol_id'); 
             $table->unsignedBigInteger('usuario_id');
-            $table->tinyInteger('usuario_id');
+            $table->tinyInteger('estado');
             $table->timestamps();
+
+            $table->foreign('rol_id')->references('id')->on('rols')->onDelete('cascade')->onUpdate('cascade');
+            $table->foreign('usuario_id')->references('id')->on('usuarios')->onDelete('cascade')->onUpdate('cascade');
         });
     }
 

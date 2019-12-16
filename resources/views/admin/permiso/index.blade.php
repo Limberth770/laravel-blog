@@ -26,7 +26,7 @@ Permisos
 					<td>{{$permiso['nombre']}}</td>
 					<td>{{$permiso['slug']}}</td>
 					<td>
-						<a href="{{route('editar_permiso',['id'->$permiso['id']])}}" class="btn">Editar</a>
+						<a href="{{route('editar_permiso',['id'=>$permiso['id']])}}" class="btn">Editar</a>
 					</td>
 				</tr>
 				@endforeach
