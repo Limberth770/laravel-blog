@@ -10,14 +10,12 @@ class PermisoController extends Controller
 {
     public function index(){
     	
-    	$permisos = array(
-    		array('id'=>'1','nombre'=>'BLABLA','slug'=>'blasl')
-    	);
+    	$permisos = Permiso::paginate(5);
     	return view('admin/permiso.index',compact('permisos'));
 		
 		//dd('index');
     }
     public function create(){
-    	dd('create');
+    	return view('admin/permiso.create');
     }
 }
